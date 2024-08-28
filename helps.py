@@ -1,3 +1,19 @@
+import os # шапка с импортами 
+import torch 
+import numpy as np
+import torch.nn as nn
+import matplotlib.pyplot as plt
+import torchvision.transforms as T
+
+from PIL import Image
+from tqdm import tqdm
+from pprint import pprint
+from time import perf_counter
+from torchvision import datasets
+from torch.utils.data import DataLoader, Dataset
+from torch.optim.lr_scheduler import StepLR
+from IPython.display import clear_output, display
+
 def plot_stats(train_loss_accuracy, test_loss_accuracy): # класс для рисования графиков loss и accuracy
     fig = plt.figure(figsize = (16,7))
     epoch = len(np.array(train_loss_accuracy)[:, 0])
